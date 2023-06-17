@@ -1,0 +1,54 @@
+Sub ANIMAX2()
+    Sheets("##").Select
+    Range("A2:L13").Select
+    Selection.Copy
+    Sheets("TITLE LIST").Select
+    Cells(Rows.Count, "A").End(xlUp).Offset(1, 0).EntireRow.Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+End Sub
+Sub ANIMAX1()
+    Sheets("##").Select
+    Range("A14:L19").Select
+    Selection.Copy
+    Sheets("TITLE LIST").Select
+    Cells(Rows.Count, "A").End(xlUp).Offset(1, 0).EntireRow.Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+End Sub
+Sub GEM_2()
+    Sheets("##").Select
+    Range("A20:L35").Select
+    Selection.Copy
+    Sheets("TITLE LIST").Select
+    Cells(Rows.Count, "A").End(xlUp).Offset(1, 0).EntireRow.Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+End Sub
+Sub GEM_1()
+    Sheets("##").Select
+    Range("A36:L43").Select
+    Selection.Copy
+    Sheets("TITLE LIST").Select
+    Cells(Rows.Count, "A").End(xlUp).Offset(1, 0).EntireRow.Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+End Sub
+Sub ONE_2()
+    Sheets("##").Select
+    Range("A44:L55").Select
+    Selection.Copy
+    Sheets("TITLE LIST").Select
+    Cells(Rows.Count, "A").End(xlUp).Offset(1, 0).EntireRow.Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+End Sub
+Sub ONE_1()
+    Sheets("##").Select
+    Range("A56:L61").Select
+    Selection.Copy
+    Sheets("TITLE LIST").Select
+    Cells(Rows.Count, "A").End(xlUp).Offset(1, 0).EntireRow.Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+End Sub
