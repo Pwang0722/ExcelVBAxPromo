@@ -1,0 +1,19 @@
+Private Sub Workbook_BeforeClose(Cancel As Boolean)
+    Dim Answer As Long
+    Dim textBreakLine As String
+    Dim textOne As String
+    Dim textTwo As String
+ 
+    textBreakLine = "*Producer reminder to run formula*'"
+    textOne = "Yes: save & close"
+    textTwo = "No: back"
+    textThree = "Cancel: close without saving"
+    Answer = MsgBox(textBreakLine & vbCrLf & textOne & vbCrLf & textTwo & vbCrLf & textTree, vbQuestion + vbYesNoCancel, "Close Workbook")
+    Select Case Answer
+        Case vbYes
+            ActiveWorkbook.Save
+        Case vbNo
+            Cancel = True
+            ThisWorkbook.Activate
+    End Select
+End Sub
