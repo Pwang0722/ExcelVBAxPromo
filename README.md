@@ -1,4 +1,4 @@
-<h2 align="center">Excel: Efficient Scheduled Booking Management with VBA Macros and Formulas</h1>
+<h2 align="center">Excel: Efficient Data Management with VBA Macros and Formulas</h1>
 </div>
 
 ### Spreadsheet Examples
