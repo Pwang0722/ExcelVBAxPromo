@@ -7,7 +7,7 @@
 ---
 
 ### Outline
-An example of using the FILTER function to auto-fill similar inputs across multiple worksheets, and of reformatting the data and exporting it as PDFs using VBA Macros. And I have created all these VBA macros with the help of ChatGPT.
+An example of using the FILTER function to auto-fill similar inputs across multiple worksheets, and of reformatting the worksheets and exporting them as PDF files using VBA Macros. And I have created all these VBA macros with the help of ChatGPT.
 
 ---
 
@@ -60,7 +60,50 @@ Next
 End If
 Next sh
 Application.ScreenUpdating = True
-MsgBox ("Done! Sheets ready to check.")
+MsgBox ("Done! Sheets are ready to check.")
+End Sub
+```
+- Lastly, running the Macro to export multiple sheets as separate PDF files.
+
+Macro example for exporting PDF files:
+  ```bash
+  Sub AllSavePDF()
+Dim fileName As String
+Dim ws As Worksheet
+
+For Each ws In ActiveWorkbook.Worksheets
+    If ws.Name <> "TITLE LIST" And ws.Name <> "INDEX" And ws.Name <> "##" And ws.Name <> "#" And ws.Name <> "REFORMAT" Then
+    
+        'Get filename from cell A2
+        fileName = ws.Range("A2").Value
+        
+        'Add date to the filename
+        fileName = fileName & "_" & Format(Date, "dd-mm-yy")
+        
+        'Save as PDF file
+        ws.ExportAsFixedFormat Type:=xlTypePDF, fileName:= _
+            fileName, Quality:=xlQualityStandard, _
+            IncludeDocProperties:=True, IgnorePrintAreas:=False, OpenAfterPublish:=False
+    End If
+Next ws
+MsgBox ("Done saving ALL sheets as PDFs!")
+End Sub
+-----------
+Sub SavePDF()
+
+    Dim fileName As String
+    
+    'Get filename from cell A2
+    fileName = Range("A2").Value
+    
+    'Add date to the filename
+    fileName = fileName & "_" & Format(Date, "dd-mm-yy")
+    
+    'Save as PDF file
+    ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, fileName:= _
+        fileName, Quality:=xlQualityStandard, _
+        IncludeDocProperties:=True, IgnorePrintAreas:=False, OpenAfterPublish:=False
+MsgBox ("Done saving this sheet as a PDF!")
 End Sub
 ```
 
