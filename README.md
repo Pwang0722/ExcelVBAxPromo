@@ -22,7 +22,7 @@ Formula example:
   ```
  - To prevent Excel from lagging while filling in data, I set the Calculation Options to Manual. Hence, users have to run the Calculate Now function every time they finish data entry or make changes. To make this process more convenient for everyone, I created a Macro that runs the Calculate Now function and assigned it to a button.
 
-Macro example:
+Macro example for function, Calculation Now:
   ```bash
   Sub CalculateWorkbook()
     Application.CalculateFull
@@ -31,7 +31,7 @@ End Sub
 ```
 - Running the Macro to tidy up multiple sheets, including hiding and deleting unnecessary columns, rows, and data.
 
-Macro example:
+Macro example for reformatting multiple worksheets:
   ```bash
   Sub Reformat()
 Application.ScreenUpdating = False
