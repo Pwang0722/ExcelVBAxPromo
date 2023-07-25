@@ -22,11 +22,46 @@ Formula example:
   ```
  - To prevent Excel from lagging while filling in data, I set the Calculation Options to Manual. Hence, users have to run the Calculate Now function every time they finish data entry or make changes. To make this process more convenient for everyone, I created a Macro that runs the Calculate Now function and assigned it to a button.
 
- Macro example:
+Macro example:
   ```bash
   Sub CalculateWorkbook()
     Application.CalculateFull
     MsgBox ("Done. Sheets are ready to check.")
 End Sub
 ```
+- Running the Macro to tidy up multiple sheets, including hiding and deleting unnecessary columns, rows, and data.
+
+Macro example:
+  ```bash
+  Sub Reformat()
+Application.ScreenUpdating = False
+For Each sh In Worksheets
+If sh.Name <> "INDEX" And sh.Name <> "TITLE LIST" And sh.Name <> "REFORMAT" And sh.Name <> "#" And sh.Name <> "##" Then
+    sh.Activate
+Dim lRow As Long
+Dim iCntr As Long
+lRow = 45
+For iCntr = lRow To 19 Step -1
+    If Trim(Cells(iCntr, 1)) = "" Then
+        Rows(iCntr).Delete
+    End If
+Next
+    Range("A19:L45").Select
+    Selection.Value = Selection.Value
+    Range("K3:L4").Select
+    Selection.ClearContents
+    Rows("2:2").Select
+    Selection.Delete Shift:=xlUp
+    Rows("4:16").Select
+    Selection.Delete Shift:=xlUp
+    x = ActiveSheet.UsedRange.Rows.Count
+    Columns("A").Hidden = True
+    Columns("G").Hidden = True
+End If
+Next sh
+Application.ScreenUpdating = True
+MsgBox ("Done! Sheets ready to check.")
+End Sub
+```
+
 ---
