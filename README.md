@@ -1,4 +1,4 @@
-<h2 align="center">Excel: Efficient Data Management with VBA Macro and Formulas</h1>
+<h2 align="center">Excel: Efficient Data Management with VBA Macro and Formula</h1>
 </div>
 
 ### Spreadsheet Examples
