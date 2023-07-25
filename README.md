@@ -114,3 +114,13 @@ End Sub
 End Sub
 ```
 ---
+
+### Tutorials
+For Data Entry:
+- [Desktop User](https://ior.ad/9aZG?iframeHash=mobilequick-1)
+- [Web User](https://ior.ad/9aZm?iframeHash=mobilequick-1)
+
+For worksheet reformatting and exporting PDF files:
+- [Mac User](https://ior.ad/9b99)
+- [Windows User](https://github.com/Pwang0722/Excel_DataManagement/blob/main/Steps%20(for%20Win).pdf)
+---
