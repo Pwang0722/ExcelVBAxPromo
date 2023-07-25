@@ -2,8 +2,8 @@
 </div>
 
 ### Example Sheets
-- [Asia Content.xlsm](https://danielpw.page.link/AsiaContent](https://github.com/Pwang0722/Excel_DataManagement/raw/main/(Asia%20Content)%20Clean%20Template.xlsm)
-- [English Content.xlsm](https://danielpw.page.link/EnglishContent)
+- [Asia Content.xlsm](https://github.com/Pwang0722/Excel_DataManagement/raw/main/(Asia%20Content)%20Clean%20Template.xlsm)
+- [English Content.xlsm](https://github.com/Pwang0722/Excel_DataManagement/raw/main/(English%20Content)%20Clean%20Template.xlsm)
 ---
 
 ### Outline
