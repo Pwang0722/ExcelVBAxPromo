@@ -78,7 +78,7 @@ For Each ws In ActiveWorkbook.Worksheets
         fileName = ws.Range("A2").Value
         
         'Add date to the filename
-        fileName = fileName & "_" & Format(Date, "dd-mm-yy")
+        fileName = fileName & "_" & Format(Date, "mm-dd-yy")
         
         'Save as PDF file
         ws.ExportAsFixedFormat Type:=xlTypePDF, fileName:= _
