@@ -28,5 +28,5 @@ Formula example:
     Application.CalculateFull
     MsgBox ("Done. Sheets are ready to check.")
 End Sub
-
+```
 ---
