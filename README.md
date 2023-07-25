@@ -7,7 +7,7 @@
 ---
 
 ### Outline
-An example of using the FILTER function to auto-fill similar inputs across multiple worksheets, and of reformatting the data and exporting them as PDFs using VBA Macro.
+An example of using the FILTER function to auto-fill similar inputs across multiple worksheets, and of reformatting the data and exporting them as PDFs using VBA Macros.
 
 ---
 
