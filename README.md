@@ -116,7 +116,7 @@ End Sub
 ---
 
 ### Tutorials
-For Data Entry:
+For data entry:
 - [Desktop User](https://ior.ad/9aZG?iframeHash=mobilequick-1)
 - [Web User](https://ior.ad/9aZm?iframeHash=mobilequick-1)
 
