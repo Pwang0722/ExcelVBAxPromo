@@ -20,42 +20,13 @@ Formula example:
   ```bash
  =IFERROR(FILTER('TITLE LIST'!A:N,('TITLE LIST'!N:N="AENG FMALLN")+('TITLE LIST'!N:N="GMAND FMALLN")+('TITLE LIST'!N:N="OMAND FMALLN")+('TITLE LIST'!N:N="OBM FMALLN")+('TITLE LIST'!N:N="ASOT ONLYALLN")+('TITLE LIST'!N:N="GSOT ONLYALLN")+('TITLE LIST'!N:N="OSOT ONLYALLN")+('TITLE LIST'!N:N="AENG FM05BN")+('TITLE LIST'!N:N="GMAND FM05BN")+('TITLE LIST'!N:N="OMAND FM05BN")+('TITLE LIST'!N:N="OBM FM05BN")+('TITLE LIST'!N:N="ASOT ONLY05BN")+('TITLE LIST'!N:N="GSOT ONLY05BN")+('TITLE LIST'!N:N="OSOT ONLY05BN")+('TITLE LIST'!N:N="GMAND FMALLY")+('TITLE LIST'!N:N="GSOT ONLYALLY")+('TITLE LIST'!N:N="GMAND FM05BY")+('TITLE LIST'!N:N="GSOT ONLY05BY")),"")
   ```
- - Lastly, achieved by running the Apps Script to tidy up multiple sheets, including hiding and deleting unnecessary columns, rows, and data.
+ - To prevent Excel from lagging while filling in data, I set the Calculation Options to Manual. Hence, users have to run the Calculate Now function every time they finish data entry or make changes. To make this process more convenient for everyone, I created a Macro that runs the Calculate Now function and assigned it to a button.
 
-  Apps Script example:
+ Macro example:
   ```bash
-  function HideAndDelete() {
-  var spreadsheet = SpreadsheetApp.getActive();
-  ["1B.NTV-HD","1C.TVB-HD","2A.MAC-SD","3A.TRV-HD & SD","3C.Triple T-SD","4B.AST-HD","4D.AST-DIGITAL","4E.TMNet-HD","5A.ME-HD","5B.SH-HD","5E.ST-HD","5F.PPCTV-SD","5G.WEW-HD","6A.MNC-HD","6C.FIM-HD","6D.TNV-HD","6J.DensTV-HD","6K.NEX-P","7A.SKC-SD","7C.PHP-GEN-SD","7D.CIGNAL-SD","8A.Media-HD","8B.Dhiraagu-HD","11A.Canal+ -HD"].forEach(function (s){
-  spreadsheet.setActiveSheet(spreadsheet.getSheetByName(s), true);
-  spreadsheet.getRange('A18:L55').activate();
-  spreadsheet.getRange('A18:L55').copyTo(spreadsheet.getActiveRange(), SpreadsheetApp.CopyPasteType.PASTE_VALUES, false);
-  spreadsheet.getRange('G:G').activate();
-  spreadsheet.getActiveSheet().hideColumns(spreadsheet.getActiveRange().getColumn(), spreadsheet.getActiveRange().getNumColumns());
-  spreadsheet.getRange('A:A').activate();
-  spreadsheet.getActiveSheet().hideColumns(spreadsheet.getActiveRange().getColumn(), spreadsheet.getActiveRange().getNumColumns());
-  spreadsheet.getRange('5:16').activate();
-  spreadsheet.getActiveSheet().hideRows(spreadsheet.getActiveRange().getRow(), spreadsheet.getActiveRange().getNumRows());
-  spreadsheet.getRange('2:2').activate();
-  spreadsheet.getActiveSheet().hideRows(spreadsheet.getActiveRange().getRow(), spreadsheet.getActiveRange().getNumRows());
-  spreadsheet.getRange('K3:L4').activate();
-  spreadsheet.getActiveRangeList().clear({contentsOnly: true, skipFilteredRows: true});
-    
-})
-};
+  Sub CalculateWorkbook()
+    Application.CalculateFull
+    MsgBox ("Done. Sheets are ready to check.")
+End Sub
 
-
-function HideRow() {
-  var ss = SpreadsheetApp.getActive();
-  ["1B.NTV-HD","1C.TVB-HD","2A.MAC-SD","3A.TRV-HD & SD","3C.Triple T-SD","4B.AST-HD","4D.AST-DIGITAL","4E.TMNet-HD","5A.ME-HD","5B.SH-HD","5E.ST-HD","5F.PPCTV-SD","5G.WEW-HD","6A.MNC-HD","6C.FIM-HD","6D.TNV-HD","6J.DensTV-HD","6K.NEX-P","7A.SKC-SD","7C.PHP-GEN-SD","7D.CIGNAL-SD","8A.Media-HD","8B.Dhiraagu-HD","11A.Canal+ -HD"].forEach(function (s){
-  var sheet = ss.getSheetByName(s);
-  var values=sheet.getRange(1,1,45,12).getValues();
-  values.forEach(function(r,i){
-    if(r[0]=='') {
-      sheet.hideRows(i+1)
-    }
-  });
-  })
-}
-  ```
 ---
