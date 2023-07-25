@@ -86,25 +86,31 @@ For Each ws In ActiveWorkbook.Worksheets
             IncludeDocProperties:=True, IgnorePrintAreas:=False, OpenAfterPublish:=False
     End If
 Next ws
-MsgBox ("Done saving ALL sheets as PDFs!")
-End Sub
------------
-Sub SavePDF()
-
-    Dim fileName As String
-    
-    'Get filename from cell A2
-    fileName = Range("A2").Value
-    
-    'Add date to the filename
-    fileName = fileName & "_" & Format(Date, "dd-mm-yy")
-    
-    'Save as PDF file
-    ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, fileName:= _
-        fileName, Quality:=xlQualityStandard, _
-        IncludeDocProperties:=True, IgnorePrintAreas:=False, OpenAfterPublish:=False
-MsgBox ("Done saving this sheet as a PDF!")
+MsgBox ("Done saving ALL sheets as PDF files!")
 End Sub
 ```
 
+- In addition, to avoid users forgetting to run Calculation Now after data entry, I have created a reminder every time they close the workbook.
+
+```bash
+  Private Sub Workbook_BeforeClose(Cancel As Boolean)
+    Dim Answer As Long
+    Dim textBreakLine As String
+    Dim textOne As String
+    Dim textTwo As String
+ 
+    textBreakLine = "*Producer reminder to run formula*'"
+    textOne = "Yes: save & close"
+    textTwo = "No: back"
+    textThree = "Cancel: close without saving"
+    Answer = MsgBox(textBreakLine & vbCrLf & textOne & vbCrLf & textTwo & vbCrLf & textTree, vbQuestion + vbYesNoCancel, "Close Workbook")
+    Select Case Answer
+        Case vbYes
+            ActiveWorkbook.Save
+        Case vbNo
+            Cancel = True
+            ThisWorkbook.Activate
+    End Select
+End Sub
+```
 ---
