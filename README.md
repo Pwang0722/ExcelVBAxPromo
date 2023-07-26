@@ -13,8 +13,8 @@ An example of using the FILTER function to auto-fill similar inputs across multi
 
 ### Ｍethod 
 Take spreadsheet [Asia Content.xlsm](https://github.com/Pwang0722/Excel_DataManagement/raw/main/(Asia%20Content)%20Clean%20Template.xlsm) as an example:
-- Fill in the data under columns A to M in the sheet titled "TITLE LIST". Based on the data you have filled in, a code will be generated from a formula in column N.
-- There is a formula in cell B19 in the sheets titled from "1B. ###" to "13A. ###", which retrieves the codes from column N in the "TITLE LIST" sheet and automatically fills in the data based on different requirements in each sheet.
+- Fill in the data under columns A to M in the sheet "TITLE LIST". Based on the data you have filled in, a code will be generated from a formula in column N.
+- There is a formula in cell B19 in the sheets titled from "1B. ###" to "13A. ###", which retrieves the codes from column N in the sheet "TITLE LIST" and automatically fills in the data based on different requirements in each sheet.
 
 Formula example:
   ```bash
