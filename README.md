@@ -1,4 +1,4 @@
-<h2 align="center">Excel: Efficient Data Management with VBA Macros and Formulas</h1>
+<h2 align="center">Excel: Efficient Data Management with VBA macros and Formulas</h1>
 </div>
 
 ### Spreadsheet Examples
@@ -20,7 +20,7 @@ Formula example:
   ```bash
  =IFERROR(FILTER('TITLE LIST'!A:N,('TITLE LIST'!N:N="AENG FMALLN")+('TITLE LIST'!N:N="GMAND FMALLN")+('TITLE LIST'!N:N="OMAND FMALLN")+('TITLE LIST'!N:N="OBM FMALLN")+('TITLE LIST'!N:N="ASOT ONLYALLN")+('TITLE LIST'!N:N="GSOT ONLYALLN")+('TITLE LIST'!N:N="OSOT ONLYALLN")+('TITLE LIST'!N:N="AENG FM05BN")+('TITLE LIST'!N:N="GMAND FM05BN")+('TITLE LIST'!N:N="OMAND FM05BN")+('TITLE LIST'!N:N="OBM FM05BN")+('TITLE LIST'!N:N="ASOT ONLY05BN")+('TITLE LIST'!N:N="GSOT ONLY05BN")+('TITLE LIST'!N:N="OSOT ONLY05BN")+('TITLE LIST'!N:N="GMAND FMALLY")+('TITLE LIST'!N:N="GSOT ONLYALLY")+('TITLE LIST'!N:N="GMAND FM05BY")+('TITLE LIST'!N:N="GSOT ONLY05BY")),"")
   ```
- - To prevent Excel from lagging while filling in data, I set the Calculation Options to Manual. Hence, users have to run the Calculate Now function every time they finish data entry or make changes. To make this process more convenient for everyone, I created a Macro that runs the Calculate Now function and assigned it to a button.
+ - To prevent Excel from lagging while filling in data, I set the Calculation Options to Manual. Hence, users have to run the Calculate Now function every time they finish data entry or make changes. To make this process more convenient for everyone, I created a macro that runs the Calculate Now function and assigned it to a button.
 
 Macro example for function, Calculation Now:
   ```bash
@@ -29,7 +29,7 @@ Macro example for function, Calculation Now:
     MsgBox ("Done. Sheets are ready to check.")
 End Sub
 ```
-- Running the Macro to tidy up multiple sheets, including hiding and deleting unnecessary columns, rows, and data.
+- Running the macro to tidy up multiple sheets, including hiding and deleting unnecessary columns, rows, and data.
 
 Macro example for reformatting multiple worksheets:
   ```bash
@@ -63,7 +63,7 @@ Application.ScreenUpdating = True
 MsgBox ("Done! Sheets are ready to check.")
 End Sub
 ```
-- Lastly, running the Macro to export multiple sheets as separate PDF files.
+- Lastly, running the macro to export multiple sheets as separate PDF files.
 
 Macro example for exporting PDF files:
   ```bash
