@@ -7,7 +7,7 @@
 ---
 
 ### Outline
-An example of using the FILTER function to auto-fill similar inputs across multiple worksheets, and of reformatting the worksheets and exporting them as PDF files using VBA Macros. And Created VBA macros with the help of ChatGPT.
+An example of using the FILTER function to auto-fill similar inputs across multiple worksheets, and of reformatting the worksheets and exporting them as PDF files using VBA macros. And created VBA macros with the help of ChatGPT.
 
 ---
 
