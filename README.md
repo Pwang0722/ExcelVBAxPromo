@@ -92,6 +92,7 @@ End Sub
 
 - In addition, to avoid users forgetting to run Calculation Now after data entry, I have created a reminder that will pop out every time they close the workbook.
 
+Macro example for workbook pop out reminder:
 ```bash
   Private Sub Workbook_BeforeClose(Cancel As Boolean)
     Dim Answer As Long
