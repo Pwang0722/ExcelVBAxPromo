@@ -1,4 +1,4 @@
-![image](https://github.com/Pwang0722/Excel_DataManagement/assets/136808262/360cefb6-4c30-4122-ba9e-f7b6d33bcc51)<h2 align="center">Excel: Efficient Data Management with VBA macros and Formulas</h1>
+<h2 align="center">Excel: Efficient Data Management with VBA macros and Formulas</h1>
 </div>
 
 ### Spreadsheet Examples
