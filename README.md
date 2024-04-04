@@ -26,7 +26,7 @@ Macro example for function, Calculation Now:
   ```bash
   Sub CalculateWorkbook()
     Application.CalculateFull
-    MsgBox ("Done. Sheets are ready to check.")
+    MsgBox ("Done.")
 End Sub
 ```
 - Running the macro to tidy up multiple sheets, including hiding and deleting unnecessary columns, rows, and data.
